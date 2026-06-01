@@ -1,0 +1,22 @@
+tenant_id: "hospital_03_childrens_national"
+name: "Children's National Hospital"
+tier: "ENTERPRISE"
+sla_target_minutes: 20
+daily_record_volume: 1500000
+
+resource_config:
+  executor_cores: 6
+  executor_memory_gb: 12
+  executor_instances: 6
+  shuffle_partitions: 48
+  aqe_enabled: true
+
+isolation_policy:
+  storage_prefix: "s3://carelake-lakehouse/tenants/childrens_national/"
+  phi_masking: "STRICT_SALTED_SHA256"
+  date_jitter_days: 14
+
+dq_gates:
+  null_threshold_pct: 0.01
+  quarantine_enabled: true
+  quarantine_prefix: "s3://carelake-lakehouse/quarantine/childrens_national/"
