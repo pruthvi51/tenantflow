@@ -1,0 +1,22 @@
+tenant_id: "hospital_05_mountain_view"
+name: "Mountain View"
+tier: "STANDARD"
+sla_target_minutes: 45
+daily_record_volume: 600000
+
+resource_config:
+  executor_cores: 4
+  executor_memory_gb: 8
+  executor_instances: 4
+  shuffle_partitions: 24
+  aqe_enabled: true
+
+isolation_policy:
+  storage_prefix: "s3://carelake-lakehouse/tenants/mountain_view/"
+  phi_masking: "STRICT_SALTED_SHA256"
+  date_jitter_days: 14
+
+dq_gates:
+  null_threshold_pct: 0.02
+  quarantine_enabled: true
+  quarantine_prefix: "s3://carelake-lakehouse/quarantine/mountain_view/"

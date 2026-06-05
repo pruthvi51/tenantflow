@@ -1,0 +1,22 @@
+tenant_id: "hospital_11_oak_ridge"
+name: "Oak Ridge"
+tier: "LITE"
+sla_target_minutes: 120
+daily_record_volume: 100000
+
+resource_config:
+  executor_cores: 2
+  executor_memory_gb: 4
+  executor_instances: 2
+  shuffle_partitions: 8
+  aqe_enabled: true
+
+isolation_policy:
+  storage_prefix: "s3://carelake-lakehouse/tenants/oak_ridge/"
+  phi_masking: "STRICT_SALTED_SHA256"
+  date_jitter_days: 14
+
+dq_gates:
+  null_threshold_pct: 0.05
+  quarantine_enabled: true
+  quarantine_prefix: "s3://carelake-lakehouse/quarantine/oak_ridge/"
