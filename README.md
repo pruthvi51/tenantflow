@@ -28,3 +28,16 @@ Enterprise multi-tenant data orchestration platform converting declarative **JSO
 - **Cluster Efficiency**: Intelligent resource allocation and AQE join skew mitigation improved Spark cluster utilization by **34%** and cut pipeline latency by **45%**.
 - **Data Governance**: Enforced tenant-level S3 path isolation and SHA-256 salt-hashing, achieving **100% HIPAA/SOC-2 compliance** with zero cross-tenant data leakage.
 - **Quality Gates**: Automated quarantine error routing diverted malformed records, reducing downstream pipeline failures by **62%**.
+
+## Research Paper & Citation
+The full IEEE technical report is available at [paper/tenantflow_architecture_paper.pdf](paper/tenantflow_architecture_paper.pdf).
+
+```bibtex
+@article{gattu2026tenantflow,
+  author = {Gattu, Pruthvi Nag},
+  title = {TenantFlow: Autonomous Multi-Tenant Data Orchestration with Adaptive Spark Resource Optimization and Zero-Leakage Governance across Healthcare Networks},
+  journal = {Technical Report},
+  year = {2026},
+  url = {https://github.com/pruthvi51/tenantflow}
+}
+```
