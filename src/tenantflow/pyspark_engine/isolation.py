@@ -1,7 +1,6 @@
 """
 HIPAA / SOC-2 Multi-Tenant Storage Isolation and PHI Salt-Hashing.
 """
-import hashlib
 from pyspark.sql import DataFrame
 from pyspark.sql import functions as F
 

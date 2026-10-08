@@ -2,11 +2,10 @@
 TenantFlow FastAPI Control Plane REST API.
 """
 from pathlib import Path
+
 from fastapi import FastAPI, HTTPException
-from tenantflow.config.models import TenantConfig
+
 from tenantflow.config.loader import load_all_tenants
-from tenantflow.dag_factory.compiler import compile_dag
-from tenantflow.scheduler.sla_scheduler import order_execution_queue
 
 app = FastAPI(
     title="TenantFlow Control Plane API",

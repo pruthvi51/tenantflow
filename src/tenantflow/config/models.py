@@ -2,8 +2,9 @@
 Pydantic v2 Models for TenantFlow Declarative DSL.
 """
 from enum import Enum
-from typing import Optional
+
 from pydantic import BaseModel, Field
+
 
 class TenantTier(str, Enum):
     ENTERPRISE = "ENTERPRISE"

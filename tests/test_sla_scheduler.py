@@ -1,7 +1,9 @@
 from pathlib import Path
-from tenantflow.config.loader import load_tenant_config, load_all_tenants
-from tenantflow.scheduler.sla_scheduler import calculate_priority_score, order_execution_queue
+
+from tenantflow.config.loader import load_all_tenants, load_tenant_config
 from tenantflow.scheduler.resource_allocator import optimize_cluster_allocation
+from tenantflow.scheduler.sla_scheduler import calculate_priority_score, order_execution_queue
+
 
 def test_enterprise_highest_priority():
     root = Path(__file__).parent.parent

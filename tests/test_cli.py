@@ -1,5 +1,7 @@
 from click.testing import CliRunner
+
 from tenantflow.cli import cli
+
 
 def test_cli_plan():
     runner = CliRunner()

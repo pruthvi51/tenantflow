@@ -1,8 +1,9 @@
 """
 SLA-Aware Scheduler with Priority Queueing and Dynamic Deadlines.
 """
-from typing import List, Dict
+
 from tenantflow.config.models import TenantConfig
+
 
 def calculate_priority_score(cfg: TenantConfig) -> float:
     """
@@ -16,5 +17,5 @@ def calculate_priority_score(cfg: TenantConfig) -> float:
     volume_factor = cfg.daily_record_volume / 100000.0
     return round(weight * 2.0 + sla_urgency + volume_factor, 2)
 
-def order_execution_queue(tenants: Dict[str, TenantConfig]) -> List[TenantConfig]:
+def order_execution_queue(tenants: dict[str, TenantConfig]) -> list[TenantConfig]:
     return sorted(tenants.values(), key=calculate_priority_score, reverse=True)

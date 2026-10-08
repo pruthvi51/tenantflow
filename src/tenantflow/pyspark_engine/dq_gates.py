@@ -1,15 +1,16 @@
 """
 Automated Data Quality Validation Gates with Quarantine Routing.
 """
+
 from pyspark.sql import DataFrame
 from pyspark.sql import functions as F
-from typing import Tuple
+
 
 def validate_and_route_quarantine(
     df: DataFrame,
     primary_key: str,
     required_cols: list[str]
-) -> Tuple[DataFrame, DataFrame, float]:
+) -> tuple[DataFrame, DataFrame, float]:
     """
     Validates data quality constraints:
     - Primary key non-null and non-empty

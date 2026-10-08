@@ -1,7 +1,9 @@
 from pathlib import Path
-from tenantflow.config.loader import load_tenant_config, load_all_tenants
+
+from tenantflow.config.loader import load_all_tenants, load_tenant_config
 from tenantflow.dag_factory.compiler import compile_dag
 from tenantflow.dag_factory.generator import generate_all_dags
+
 
 def test_compile_dag_metro():
     root = Path(__file__).parent.parent

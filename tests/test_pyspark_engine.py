@@ -1,6 +1,8 @@
 from pyspark.sql import SparkSession
-from tenantflow.pyspark_engine.isolation import mask_patient_identifiers
+
 from tenantflow.pyspark_engine.dq_gates import validate_and_route_quarantine
+from tenantflow.pyspark_engine.isolation import mask_patient_identifiers
+
 
 def test_mask_patient_identifiers():
     spark = SparkSession.builder.master("local[1]").appName("Test").getOrCreate()

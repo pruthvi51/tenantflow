@@ -3,7 +3,9 @@ Intelligent Spark Cluster Resource Allocation Engine.
 Calculates optimal cores, memory, and instances to maximize utilization by 34%.
 """
 import math
-from tenantflow.config.models import TenantConfig, ResourceConfig
+
+from tenantflow.config.models import ResourceConfig, TenantConfig
+
 
 def optimize_cluster_allocation(cfg: TenantConfig, available_cores: int = 64) -> ResourceConfig:
     """

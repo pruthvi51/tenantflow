@@ -1,6 +1,8 @@
 from pathlib import Path
-from tenantflow.config.loader import load_tenant_config, load_all_tenants
+
+from tenantflow.config.loader import load_all_tenants, load_tenant_config
 from tenantflow.config.models import TenantTier
+
 
 def test_load_enterprise_tenant():
     root = Path(__file__).parent.parent

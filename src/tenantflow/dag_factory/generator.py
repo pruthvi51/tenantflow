@@ -2,11 +2,12 @@
 Dynamic DAG Batch Generator.
 """
 from pathlib import Path
-from typing import Dict
+
 from tenantflow.config.models import TenantConfig
 from tenantflow.dag_factory.compiler import compile_dag
 
-def generate_all_dags(tenants: Dict[str, TenantConfig], output_dir: Path) -> int:
+
+def generate_all_dags(tenants: dict[str, TenantConfig], output_dir: Path) -> int:
     output_dir.mkdir(parents=True, exist_ok=True)
     count = 0
     for tenant_id, cfg in tenants.items():

@@ -1,16 +1,18 @@
 """
 TenantFlow Command-Line Interface.
 """
-import click
 from pathlib import Path
-from tenantflow.config.loader import load_all_tenants, load_tenant_config
-from tenantflow.dag_factory.generator import generate_all_dags
+
+import click
+
 from tenantflow.benchmarks.run_aqe_benchmark import run_benchmark
+from tenantflow.config.loader import load_all_tenants
+from tenantflow.dag_factory.generator import generate_all_dags
+
 
 @click.group()
 def cli():
     """TenantFlow Orchestration Platform CLI."""
-    pass
 
 @cli.command()
 @click.option("--config-dir", default="tenants", help="Tenant configs directory")

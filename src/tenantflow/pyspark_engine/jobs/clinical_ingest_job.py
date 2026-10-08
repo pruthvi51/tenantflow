@@ -2,9 +2,10 @@
 PySpark Clinical Encounter Ingestion Job for Tenant.
 """
 from pyspark.sql import SparkSession
-from pyspark.sql import functions as F
-from tenantflow.pyspark_engine.isolation import mask_patient_identifiers
+
 from tenantflow.pyspark_engine.dq_gates import validate_and_route_quarantine
+from tenantflow.pyspark_engine.isolation import mask_patient_identifiers
+
 
 def run_ingest_job(spark: SparkSession, input_path: str, output_path: str, tenant_id: str):
     df = spark.read.option("header", "true").csv(input_path)

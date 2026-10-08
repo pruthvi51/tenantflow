@@ -1,9 +1,11 @@
 """
 TenantFlow Multi-Tenant Operations Console (Streamlit).
 """
-import streamlit as st
-import pandas as pd
 from pathlib import Path
+
+import pandas as pd
+import streamlit as st
+
 from tenantflow.config.loader import load_all_tenants
 
 st.set_page_config(page_title="TenantFlow Operations Console", page_icon="🔀", layout="wide")

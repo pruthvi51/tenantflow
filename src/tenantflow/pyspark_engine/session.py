@@ -2,7 +2,9 @@
 TenantFlow SparkSession Factory with Dynamic Adaptive Query Execution (AQE).
 """
 from pyspark.sql import SparkSession
+
 from tenantflow.config.models import TenantConfig
+
 
 def get_spark_session(tenant_cfg: TenantConfig) -> SparkSession:
     res = tenant_cfg.resource_config
